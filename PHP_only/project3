@@ -1,0 +1,164 @@
+
+<?php
+$host= 'localhost';
+$dbUser= 'root'; 
+$dbPass= ''; 
+if(!$dbConn=mysqli_connect($host, $dbUser, $dbPass)) {
+ die('Не може да се осъществи връзка със сървъра.');
+}
+ $sql = 'CREATE Database university';
+ if ($queryResource=mysqli_query($dbConn,$sql))
+ {
+ echo "Базата данни е създадена. <br>";
+ }
+ else
+ {
+ echo "Грешка при създаване на базата данни: ";
+ }
+?>
+<?php
+$host= 'localhost';
+$dbUser= 'root';
+$dbPass= '';
+$dbName= 'university';
+if (!$dbConn=mysqli_connect($host, $dbUser, $dbPass))
+ {
+ die('Не може да се осъществи връзка със сървъра.');
+}
+ if (!mysqli_select_db($dbConn,$dbName))
+ {
+ die('Не може да се селектира базата от данни.');
+ }
+ mysqli_query($dbConn,"SET NAMES 'UTF8'");
+?>
+<?php
+ include "k31.php";
+ $sql ="CREATE TABLE Students(
+ fn VARCHAR(100) DEFAULT NULL,
+ name VARCHAR(100) DEFAULT NULL,
+ familiq VARCHAR(100) DEFAULT NULL,
+ specialnost VARCHAR(100) DEFAULT NULL,
+ uspeh FLOAT(10) NOT NULL
+ ) ENGINE=INNODB DEFAULT CHARSET=utf8";
+ $result = mysqli_query($dbConn,$sql);
+ if (!$result) {
+    die('Грешка при създаване на таблицата.');
+}
+echo "Таблицата е създадена!";
+?>
+<?php
+?>
+<html><head><title><b>University:</b></title></head><body>
+             <p><b>University:</b></p>
+             <br><a href="k34.php">Vuvejdane </a></br>
+        <br><a href="k37.php">Iztrivane </a></br>
+        <br><a href="k36.php">Print table </a></br>
+        <br><a href="k38.php">Suvpadenie </a></br>
+        </body>
+        </html>
+        <!DOCTYPE html>
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title></title>
+ </head>
+ <body>
+<?php
+    echo "<form action='k35.php' method='POST'>
+<pre>
+FN: <input type='text' name='fn'/>
+Ime: <input type='text' name='name' />
+Familiq: <input type='text' name='familiq' />
+Specialnost: <input type='text' name='specialnost'/>
+Uspeh: <input type='text' name='uspeh'/>
+<input type='submit' name='submit' value='Въведи'/>
+</pre>
+</form>"; 
+    echo "<br><a href='k33.php'>Vurni se obratno </a></br>";
+?>
+</body>
+</html>
+<?php
+ include "k31.php";
+ if (isset($_POST["submit"]))
+ {
+ $fn = $_POST['fn'];
+ $name = $_POST['name'];
+$familiq= $_POST['familiq'];
+$specialnost = $_POST['specialnost'];
+$uspeh=$_POST['uspeh'];
+   $br=1;
+if (!empty($fn) && !empty($name) && !empty($familiq) && !empty($specialnost) && !empty($uspeh)) {
+        $sql = "INSERT INTO Students(fn, name, familiq, specialnost,uspeh) VALUES ('$fn', '$name',
+ '$familiq', '$specialnost', '$uspeh')";
+        $result = mysqli_query($dbConn, $sql);
+        if (!$result) {
+            die('Грешка!!!');
+        }
+        echo "Добавихте един запис.";
+        $br++;
+        echo "<br><a href='k34.php'>Vurni se obratno </a></br>";
+    } else {
+        echo "Не сте въвели всички данни!!!";
+    }
+    if($br<5){
+ echo    "Dobavete oshte edin zapis";
+        }else {echo "Ima pone 5 zapisa";
+        }
+}
+?>
+<?php
+ include "k31.php";
+ $result =mysqli_query($dbConn, "SELECT *FROM Students");
+  echo "<table border='1'>";
+ echo "<ol>";
+ echo "<tr>"."<td>"."Fn "."</td>"." "."<td>"."Ime"."</td>"." "."<td>"."Familiq"."</td>"." "."<td>"."Specialnost"."</td>"." "."<td>"."uspeh"."</td>"."</tr>";
+
+ while($row = mysqli_fetch_array($result)){
+ echo "<tr>"."<td>".$row['fn']."</td>"." "."<td>".$row['name']."</td>"." "."<td>".$row['familiq']."</td>"." "."<td>".$row['specialnost']."</td>"." "."<td>".$row['uspeh']."</td>"."</tr>";}
+ echo "<tr><p><a href='k37.php'>Iztrivane </a></p></tr>";
+echo "</ol>";
+echo "</table>";
+?>
+<?php
+ include "k31.php";
+ $sql = "DELETE FROM Students WHERE uspeh=2";
+ $result = mysqli_query($dbConn,$sql);
+ $result = mysqli_query($dbConn,"SELECT * FROM Students");
+ while($row=mysqli_fetch_array($result))
+ {
+ echo $row['name'].".".$row['familiq']."<br>";
+ }
+?>
+        <html><head><title></title></head><body>
+    
+                <form action =  "#" method="POST">
+                    Specialnost:<input type="text" name="specialnost1"/></br>
+                    <input type="submit" name="submit" value="Submit"/>
+                </form>
+    </body></html>
+<?php
+ include "k31.php";
+ include  "k35.php";
+ $specialnost1=$_POST['specialnost1'];
+ if(strcmp($specialnost,$specialnost1)==0)
+ {
+ $result =mysqli_query($dbConn, "SELECT *FROM Students");
+  echo "<table border='1'>";
+ echo "<ol>";
+ echo "<tr>"."<td>"."Ime"."</td>"." "."<td>"."specialnost"."</td>"."</tr>";
+ while($row = mysqli_fetch_array($result)){
+ echo "<tr>"."<td>".$row['name']."</td>"." "."<td>".$row['specialnost']."</td>"."</tr>";}
+echo "</ol>";
+echo "</table>";
+ }
+ else{
+     echo "Ne suvpada specialnost s dannite ot tablicata";
+ }
+?>
+
+
+
+
+
+
