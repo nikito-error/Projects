@@ -1,0 +1,374 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+p {
+  color: black;
+}
+
+.line-tr{
+    text-decoration: line-through;
+    font-size:1.2rem;
+}
+
+.discount-color{
+    color:#F90716;
+}
+span{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+/*
+button {
+  font-family: 'Ubuntu', sans-serif;
+} */
+.container-fluid {
+  padding: 7% 15%;
+}
+
+/* Heading */
+.big-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#title {
+  text-align: left;
+}
+
+#title .container-fluid {
+  /* padding: 1% 1% 1%; */
+  padding: 1% 7% 0.5% 7%;
+}
+
+#footer .container-fluid{
+  /* margin: 2% 7% 2% 7%; */
+     padding: 1% 7% 2% 7%;
+}
+
+.categ-nav{
+    padding: 1.5% 8% 1% 8%;
+}
+/* sections */
+
+.colored-section {
+  /* background-color: #d8f3dc; */
+  background-color: #D9ADAD;
+  color: #fff;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+
+/* Navigation bar */
+.categ {
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-left: 0%
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: 'Montserrat-light', sans-serif;
+}
+
+.icon-nav {
+  color: black;
+}
+
+/* Buttons */
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.dropdown-butt {
+  margin-right: 1%;
+}
+
+.deal{
+   
+    background-color: #838383;
+}
+
+/* Title image */
+.title-image {
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%;
+}
+
+/* Features */
+#features {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-box {
+  padding: 5%;
+}
+
+.icon {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #ff4c68;
+}
+
+.feature-heading {
+  font-size: 1.5rem;
+}
+
+/* Testimonaial */
+#testimonials {
+  background-color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+#mycarousel {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/* Press */
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+.press-logo {
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* Pricing */
+#pricing {
+  padding-top: 50px;
+  padding-left:6.2%;
+  padding-right: 6.2%;
+
+}
+
+
+.card-header{
+  padding: 0;
+
+}
+.card-header img{
+  /*object-fit: cover;*/
+    width: 90vw;
+    height: 50vh;
+    object-fit:cover;
+}
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.price-text {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.card-body p{
+  text-align: left;
+  color: black;
+}
+/* Catalog */
+
+#categories{
+ 
+  padding-left:6.2%;
+  padding-right: 6.2%;
+
+}
+
+.headin-catalog{
+    text-align: left;
+    padding-top: 0.8%;
+    padding-left: 0.9%;
+}
+
+.filters{
+    padding-left: 2%;
+}
+
+.pricing-column-categ{
+    padding: 1% 2%;
+}
+
+/*Log */
+.form-group{
+    text-align: left;
+}
+
+.btn-reg{
+    background-color:#7FD4AF;
+}
+/*Pregled */
+.pregled-p{
+    padding: 1% 4%;
+}
+
+
+.pregled-img{
+  /*object-fit: cover;*/
+    width: 100vw;
+    height: 90vh;
+    object-fit:cover;
+}
+/* Help */
+.padding-q{
+    text-align: left;
+    padding-left: 0.9%;
+    padding-right: 0.9%;
+}
+.questions{
+    padding: 1%;
+}
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
+ /*Cart*/
+ .cart-heading{
+     text-align: left;
+     padding-left: 4%;
+     padding-right: 4%;
+ }
+ 
+ .cart-size{
+     width: 10vw;
+    height: 20vh;
+ }
+/* Footer */
+.ficon {
+  margin: 1% 0.5%;
+}
+
+.column-footer{
+  text-align:left;
+  color: black;
+  padding:1% 3% 1% 3%;
+}
+.column-footer p{
+  line-height: 1;
+}
+
+.footer-desc{
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  #footer .container-fluid{
+    /* margin: 2% 7% 2% 7%; */
+       padding: 1% 5% 2% 5%;
+  }
+
+  .column-footer{
+    text-align:left;
+    color: black;
+    padding:2% 6% 2% 6%;
+  }
+
+  .categ-nav{
+      padding: 1% 10% 1% 10%;
+  }
+  .dropdown-butt {
+    /*margin: 3% auto 0% auto;*/
+    margin:auto 0.4% auto 0.4%;
+    
+  }
+
+  .ml-auto, .mx-auto {
+    margin-left: 0% !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+  #categories{
+ 
+  padding-left:8%;
+  padding-right: 8%;
+
+}
+
+.headin-catalog{
+    text-align: left;
+    padding-top: 0.8%;
+    padding-left: 0%;
+}
+ 
+}
+/*
+.carousel {
+  &__img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+  }
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+*/
