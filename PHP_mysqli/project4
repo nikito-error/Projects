@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exam</title>
+    </head>
+    <body>      
+        <?php
+           define("PI",3.14,True);          
+           abstract class Figure
+           {
+              abstract public function S();
+              abstract public function P();            
+           }
+           
+           class Square extends Figure
+           {
+               private $a;
+               function __construct($a) {
+                   $this->a = $a;
+               }             
+               public function S()
+               {
+                  $s=$this->a*$this->a;
+                  echo "Square S=$s<br>";
+               }
+               public function P()
+               {
+                   $p=4*$this->a;
+                   echo "Square P=$p<br>";
+               }
+           }
+           
+           class Rectangle extends Figure
+           {
+               private $a,$b;
+               function __construct($a, $b) {
+                   $this->a = $a;
+                   $this->b = $b;
+               }
+
+               public function S()
+               {
+                   $s=$this->a*$this->b;
+                   echo "Rectangle S=$s<br>";
+               }
+               public function P()
+               {
+                   $p=2*$this->a+2*$this->b;
+                   echo "Rectangle P=$p<br>";
+               }
+           }
+           
+           class Circle extends Figure
+           {
+               private $r;
+               function __construct($r) {
+                   $this->r = $r;
+               }
+
+               public function S()
+               {
+                   $s=PI*$this->r*$this->r;
+                   echo "Circle S=$s<br>";
+               } 
+               public function P()
+               {
+                   $p=2*PI*$this->r;
+                   echo "Circle P=$p<br>";
+               }
+           }           
+           $objects=array(new Square(8), new Square(15), new Rectangle(12,4), new Rectangle(8,3), new Circle(5));
+            foreach($objects as $obj)
+            {               
+                $obj->P();                
+                $obj->S();
+                echo "<br>";
+            }
+        ?>          
+    </body>
+</html>
