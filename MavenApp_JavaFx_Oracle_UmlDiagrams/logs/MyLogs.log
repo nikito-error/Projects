@@ -1,0 +1,35 @@
+[TRACE] 2020-11-25 17:29:59.901 [JavaFX Application Thread] LoggerClass - This is trace message
+[INFO ] 2020-11-25 17:29:59.904 [JavaFX Application Thread] LoggerClass - This is information message
+[ERROR] 2020-11-25 17:29:59.905 [JavaFX Application Thread] LoggerClass - This is error message
+[WARN ] 2020-11-25 17:29:59.905 [JavaFX Application Thread] LoggerClass - This is warn message
+[FATAL] 2020-11-25 17:29:59.905 [JavaFX Application Thread] LoggerClass - This is fatal message
+
+
+[TRACE] 2020-11-25 17:30:44.405 [JavaFX Application Thread] LoggerClass - This is trace message
+[INFO ] 2020-11-25 17:30:44.408 [JavaFX Application Thread] LoggerClass - This is information message
+[ERROR] 2020-11-25 17:30:44.408 [JavaFX Application Thread] LoggerClass - This is error message
+[WARN ] 2020-11-25 17:30:44.409 [JavaFX Application Thread] LoggerClass - This is warn message
+[FATAL] 2020-11-25 17:30:44.409 [JavaFX Application Thread] LoggerClass - This is fatal message
+
+
+[TRACE] 2020-11-25 17:33:14.493 [JavaFX Application Thread] LoggerClass - This is trace message
+[INFO ] 2020-11-25 17:33:14.497 [JavaFX Application Thread] LoggerClass - This is information message
+[ERROR] 2020-11-25 17:33:14.497 [JavaFX Application Thread] LoggerClass - This is error message
+[WARN ] 2020-11-25 17:33:14.497 [JavaFX Application Thread] LoggerClass - This is warn message
+[FATAL] 2020-11-25 17:33:14.497 [JavaFX Application Thread] LoggerClass - This is fatal message
+
+
+[TRACE] 2020-11-25 17:33:31.250 [JavaFX Application Thread] LoggerClass - This is trace message
+[INFO ] 2020-11-25 17:33:31.253 [JavaFX Application Thread] LoggerClass - This is information message
+[ERROR] 2020-11-25 17:33:31.253 [JavaFX Application Thread] LoggerClass - This is error message
+[WARN ] 2020-11-25 17:33:31.254 [JavaFX Application Thread] LoggerClass - This is warn message
+[FATAL] 2020-11-25 17:33:31.254 [JavaFX Application Thread] LoggerClass - This is fatal message
+
+
+[TRACE] 2020-11-25 17:40:20.059 [JavaFX Application Thread] LoggerClass - This is trace message
+[INFO ] 2020-11-25 17:40:20.062 [JavaFX Application Thread] LoggerClass - This is information message
+[ERROR] 2020-11-25 17:40:20.062 [JavaFX Application Thread] LoggerClass - This is error message
+[WARN ] 2020-11-25 17:40:20.062 [JavaFX Application Thread] LoggerClass - This is warn message
+[FATAL] 2020-11-25 17:40:20.063 [JavaFX Application Thread] LoggerClass - This is fatal message
+
+
