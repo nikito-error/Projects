@@ -1,0 +1,373 @@
+"""
+Допълнителна №1
+import sqlite3
+conn = sqlite3.connect('dop1.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute('DELETE FROM Company WHERE number < 100')
+"""
+"""
+Допълнителна №2
+import sqlite3
+
+list_ = ['a', 'b', 'c']
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute('''Create TABLE if not exists server("sites")''')
+
+
+def data_entry():
+    for item in list_:
+        c.execute("INSERT INTO server(sites) VALUES(?)", (item))
+    conn.commit()
+
+data_entry()  
+
+
+c.execute("SELECT * FROM server")
+rows = c.fetchall()
+for row in rows:
+    print(row)
+
+conn.close()
+"""
+"""
+Допълнителна №3
+import sqlite3
+conn = sqlite3.connect('dop1.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute('DELETE FROM Company WHERE number < 100')
+"""
+"""
+Допълнителна №4
+import sqlite3
+
+list_ = ['a', 'b', 'c']
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute('''Create TABLE if not exists server("sites")''')
+
+
+def data_entry():
+    for item in list_:
+        c.execute("INSERT INTO server(sites) VALUES(?)", (item))
+    conn.commit()
+
+data_entry()
+
+
+c.execute("SELECT * FROM server")
+rows = c.fetchall()
+for row in rows:
+    print(row)
+
+conn.close()
+"""
+"""
+Допълнителна №5
+import sqlite3
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute("UPDATE Company SET salary = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET address = 'Sofia' WHERE number = 4")
+cur.execute("DELETE FROM Company WHERE number = 2")
+print('UPDATED COMPANY:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+    """
+"""
+Допълнителна №6
+import sqlite3
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute("UPDATE Company SET salary = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET address = 'Sofia' WHERE number = 4")
+cur.execute("UPDATE Company SET number = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET name = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET age = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET address = 2000 WHERE number = 1").fetchall()
+cur.execute("DELETE FROM Company WHERE number = 2")
+print('UPDATED COMPANY:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+    """
+"""
+Допълнителна №7
+import sqlite3
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute("DELETE FROM Company WHERE number = 2")
+print('UPDATED COMPANY:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+    """
+"""
+Допълнителна №8
+import sqlite3
+import io
+from sqlite3 import Error
+
+
+def sql_connection():
+    try:
+        conn = sqlite3.connect('Originaldatabase.db')
+        return conn
+    except Error:
+        print(Error)
+
+
+def sql_table(conn):
+    cursor_object = conn.cursor()
+    cursor_object.execute(
+        "CREATE TABLE student(roll_no integer PRIMARY KEY,first_name text,\
+        last_name text, class text, stream text,address text)")
+    conn.commit()
+
+
+conn = sql_connection()
+sql_table(conn)
+conn = sqlite3.connect('Originaldatabase.db')
+
+# Open() function
+with io.open('backupdatabase_dump.sql', 'w') as p:
+    # iterdump() function
+    for line in conn.iterdump():
+        p.write('%s\n' % line)
+
+print(' Backup performed successfully!')
+print(' Data Saved as backupdatabase_dump.sql')
+
+conn.close()
+    """
+
+
+"""
+Самостоятелна №1
+import sqlite3
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (number INTEGER,name TEXT,age INTEGER,address TEXT,salary INTEGER)')
+for i in range(10):
+    i+=1
+    print("This is company Person №:",i)
+    number=i
+    name=input('Enter a name:')
+    age=input('Enter age:')
+    address=input('Enter address:')
+    salary=input('Enter salary:')
+    cur.execute('INSERT INTO Company (number,name,age,address,salary) VALUES (?, ? ,? ,? ,?)',(number, name,age,address,salary))
+print('Company:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+cur.execute("UPDATE Company SET salary = 2000 WHERE number = 1").fetchall()
+cur.execute("UPDATE Company SET address = 'Sofia' WHERE number = 4")
+cur.execute("DELETE FROM Company WHERE number = 2")
+print('UPDATED COMPANY:')
+cur.execute('SELECT number,name,age,address,salary FROM Company')
+for row in cur:
+    print(row)
+print('Min Salary')
+cur.execute('Select MIN(salary) as "Min Salary" From Company')
+for row in cur:
+    print(row)
+print('Average Salary')
+cur.execute('Select AVG(salary) as "AVG Salary" From Company')
+for row in cur:
+    print(row)
+print('Max Salary')
+cur.execute('Select MAX(salary) as "MAX Salary" From Company')
+for row in cur:
+    print(row)
+cur.execute('DELETE FROM Company WHERE number < 100')
+"""
+"""
+Самостоятелна №2
+import sqlite3
+conn = sqlite3.connect('new.sqlite')
+cur = conn.cursor()
+cur.execute('DROP TABLE IF EXISTS Contacts')
+cur.execute('CREATE TABLE Contacts (number INTEGER PRIMARY KEY,name TEXT,lastname TEXT,age INTEGER,gender TEXT,email TEXT,phone TEXT)')
+cur.execute('DROP TABLE IF EXISTS Groups')
+cur.execute('CREATE TABLE Groups (number INTEGER PRIMARY KEY,name TEXT)')
+cur.execute('DROP TABLE IF EXISTS Contact_Groups')
+cur.execute('CREATE TABLE Contact_Groups (number_contact INTEGER,number_group Integer,FOREIGN KEY(number_contact) REFERENCES Contacts(number),FOREIGN KEY(number_group) REFERENCES Groups(number))')
+i=0
+for i in range(10):
+    i += 1
+    print("This is Contact №:", i)
+    number = i
+    name=input('Enter name:')
+    lastname = input('Enter a LastName:')
+    age = input('Enter age:')
+    gender = input('Enter gender - Male or Female:')
+    email = input('Enter email:')
+    phone=input('Enter phone:')
+    cur.execute('INSERT INTO Contacts (number,name,lastname,age,gender,email,phone) VALUES (?, ?, ?, ?, ?, ?, ?)',(number, name,lastname,age,gender,email,phone))
+print('Contacts:')
+cur.execute('SELECT * FROM Contacts')
+for row in cur:
+    print(row)
+i=0
+for i in range(3):
+    i += 1
+    print("This is Group №:", i)
+    number = i
+    name=input('Enter name:')
+    cur.execute('INSERT INTO Groups (number,name) VALUES (?, ?)',(number, name))
+print('Groups:')
+cur.execute('SELECT * FROM Groups')
+for row in cur:
+    print(row)
+i=0
+for i in range(3):
+    i += 1
+    print("This is Contact_Groups №:", i)
+    number = i
+    number1 = i
+    cur.execute('INSERT INTO Contact_Groups (number_contact,number_group) VALUES (?, ?)', (number, number1))
+print('Contact_Groups:')
+cur.execute('SELECT * FROM Contact_Groups')
+for row in cur:
+    print(row)
+print('Sorting contacts by gender:')
+cur.execute('SELECT * FROM Contacts order by gender asc')
+for row in cur:
+    print(row)
+print('Contact with Min Age from all groups:')
+cur.execute('SELECT MIN(c.age),g.name,c.name,c.lastname,c.email,c.phone from Contacts c INNER JOIN Contact_Groups cg on c.number=cg.number_contact INNER JOIN Groups g on g.number=cg.number_group')
+for row in cur:
+    print(row)
+print('Contact with Max Age from all groups:')
+cur.execute('SELECT MAX(c.age),g.name,c.name,c.lastname,c.email,c.phone from Contacts c INNER JOIN Contact_Groups cg on c.number=cg.number_contact INNER JOIN Groups g on g.number=cg.number_group')
+for row in cur:
+    print(row)
+print('Find contact by phone number:')
+phone1=input('Enter a phone:')
+cur.execute('SELECT * from Contacts where phone like ?',('%'+phone1+'%',))
+for row in cur:
+    print(row)
+cur.execute("UPDATE Contacts SET phone = '08351534' WHERE number = 5")
+cur.execute('DELETE FROM Contacts WHERE number = 7')
+print('Update contact number 5 and delete contact number 7 and printed Contacts are :')
+cur.execute('SELECT * from Contacts')
+for row in cur:
+    print(row)
+    """
+"""
+import sqlite3
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)',('Thunderstruck', 20))
+cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)',('My Way',15))
+conn.commit()
+print('Tracks:')
+cur.execute('SELECT title, plays FROM Tracks')
+for row in cur:
+ print(row)
+cur.execute('DELETE FROM Tracks WHERE plays < 100')
+conn.commit()
+cur.close()
+"""
+
+
+"""
+import sqlite3
+connection = sqlite3.connect("aquarium.db")
+cursor = connection.cursor()
+cursor.execute("INSERT INTO Tracks (title, plays) VALUES ('My Way', 15)")
+rows = cursor.execute("SELECT * FROM Tracks WHERE title = 'My Way'").fetchall()
+print(rows)
+rows = cursor.execute("SELECT title,plays FROM Tracks ORDER BY title").fetchall()
+print(rows)
+cursor.execute("DELETE FROM Tracks WHERE title = 'My Way'")
+rows = cursor.execute("SELECT title,plays FROM Tracks ORDER BY title").fetchall()
+print(rows)
+
+cursor.execute("UPDATE Tracks SET plays = 16 WHERE title = 'My Way'")
+rows = cursor.execute("SELECT title,plays FROM Tracks ORDER BY title").fetchall()
+print(rows)
+
+"""
